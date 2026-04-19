@@ -4,18 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Microsoft 365 Consultant in India | Azure | Networking | Security - Alakesh Barman</title>
-
-<meta name="description" content="Alakesh Barman - Microsoft 365 Consultant, Azure Consultant in Delhi, Networking Consultant India, Office 365 Security Expert.">
-<meta name="keywords" content="Microsoft 365 Consultant India, Azure Consultant Delhi, Networking Consultant India, Office 365 Security Expert, VDI VMware">
+<title>Alakesh Barman | Microsoft 365 | Azure | Security Consultant</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:'Inter',sans-serif;background:#020617;color:#e2e8f0}
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:#e2e8f0;
+scroll-behavior:smooth;
+}
 
-header{text-align:center;padding:30px}
+/* HEADER */
+header{
+text-align:center;
+padding:30px;
+}
 
+header h1{
+font-size:32px;
+}
+
+/* NAV */
 nav{
 display:flex;
 justify-content:center;
@@ -23,62 +35,112 @@ gap:25px;
 padding:15px;
 position:sticky;
 top:0;
-background:rgba(2,6,23,0.8);
-backdrop-filter:blur(10px)
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(12px);
+z-index:1000;
 }
 
-nav a{cursor:pointer;color:#cbd5f5;text-decoration:none}
-nav a:hover{color:#38bdf8}
+nav a{
+cursor:pointer;
+color:#cbd5f5;
+text-decoration:none;
+transition:0.3s;
+}
 
+nav a:hover{
+color:#38bdf8;
+transform:scale(1.1);
+}
+
+/* SECTION */
 .section{
 display:none;
-padding:60px 20px;
+padding:70px 20px;
 max-width:1100px;
-margin:auto
+margin:auto;
+animation:fadeIn 0.6s ease;
 }
 
 .active{display:block}
 
-.hero{text-align:center;padding:100px 20px}
-.hero h2{font-size:42px}
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
 
-.highlight{color:#38bdf8}
+/* HERO */
+.hero{
+text-align:center;
+padding:120px 20px;
+}
 
+.hero h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.highlight{
+color:#38bdf8;
+}
+
+/* BUTTON */
 .btn{
-padding:12px 22px;
-background:#38bdf8;
+padding:14px 26px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
 border:none;
 border-radius:8px;
 cursor:pointer;
 color:#000;
-font-weight:600
+font-weight:600;
+transition:0.3s;
 }
 
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #38bdf8;
+}
+
+/* CARDS */
 .card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(15px);
 border-radius:15px;
-padding:20px;
-box-shadow:0 8px 30px rgba(0,0,0,0.3);
-transition:0.3s
+padding:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+transition:0.4s;
 }
 
 .card:hover{
-transform:translateY(-5px)
+transform:translateY(-8px) scale(1.02);
 }
 
-.services,.testimonials,.cases{
+/* GRID */
+.services,.cases{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px
+gap:20px;
 }
 
+/* TESTIMONIAL SLIDER */
+.testimonial-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.stars{
+color:#facc15;
+font-size:20px;
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
-margin-top:40px
+margin-top:40px;
 }
 
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -88,19 +150,7 @@ color:white;
 padding:15px;
 border-radius:50%;
 font-size:20px;
-text-decoration:none
-}
-
-/* Testimonials Styling */
-.card p:first-child{
-font-size:18px;
-color:#facc15;
-}
-
-.card strong{
-display:block;
-margin-top:10px;
-color:#38bdf8;
+text-decoration:none;
 }
 </style>
 </head>
@@ -109,7 +159,7 @@ color:#38bdf8;
 
 <header>
 <h1>Alakesh Barman Consulting</h1>
-<p>Microsoft 365 | Azure | Networking | Security</p>
+<p>Cloud | Security | Networking Expert</p>
 </header>
 
 <nav>
@@ -120,119 +170,70 @@ color:#38bdf8;
 <a onclick="showSection('contact')">Contact</a>
 </nav>
 
+<!-- HOME -->
 <section id="home" class="section active">
 <div class="hero">
-<h2>
-<span class="highlight">Microsoft 365 Consultant in India</span><br>
-Azure Consultant in Delhi | Networking Consultant India | Office 365 Security Expert
-</h2>
-<p>Based in New Delhi, providing IT and Networking consulting services across India.</p>
+
+<h2 id="typing"></h2>
+
+<p>Helping businesses across India secure, scale, and modernize IT infrastructure.</p>
+
 <button class="btn" onclick="showSection('contact')">Get Free Consultation</button>
+
 </div>
 </section>
 
+<!-- SERVICES -->
 <section id="services" class="section">
 <h2>Services</h2>
+
 <div class="services">
 
-<div class="card">
-<strong>Microsoft 365 Consulting</strong><br>
-Setup, migration, MFA, DKIM, DMARC
-</div>
-
-<div class="card">
-<strong>Azure Cloud Solutions</strong><br>
-Cloud infrastructure & backup
-</div>
-
-<div class="card">
-<strong>Networking Consulting</strong><br>
-LAN/WAN, firewall, VPN, routing
-</div>
-
-<div class="card">
-<strong>Office 365 Security</strong><br>
-Defender, SIEM, DLP
-</div>
-
-<div class="card">
-<strong>VDI & VMware</strong><br>
-VMware Horizon deployment
-</div>
+<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, Security</div>
+<div class="card"><strong>Azure Cloud</strong><br>Infrastructure & Backup</div>
+<div class="card"><strong>Networking</strong><br>Firewall, VPN, LAN/WAN</div>
+<div class="card"><strong>Security</strong><br>Defender, SIEM, DLP</div>
+<div class="card"><strong>VDI & VMware</strong><br>Horizon Deployment</div>
 
 </div>
-
-<p style="margin-top:20px;">
-Explore more:
-<a href="microsoft365-consultant-india.html">Microsoft 365 Consultant in India</a>,
-<a href="azure-consultant-delhi.html">Azure Consultant in Delhi</a>,
-<a href="office365-security-expert.html">Office 365 Security Expert</a>,
-<a href="networking-consultant-india.html">Networking Consultant India</a>
-</p>
 </section>
 
+<!-- CASES -->
 <section id="cases" class="section">
 <h2>Case Studies</h2>
+
 <div class="cases">
 
 <div class="card">
 <h3>M365 Migration</h3>
-<p>Successfully migrated 200+ users to Microsoft 365 with zero downtime and full security implementation.</p>
+<p>200+ users migrated with zero downtime.</p>
 </div>
 
 <div class="card">
-<h3>Azure Backup Implementation</h3>
-<p>Designed and deployed Azure backup and disaster recovery solution ensuring business continuity.</p>
+<h3>Azure Backup</h3>
+<p>Enterprise DR & backup solution deployed.</p>
 </div>
 
 <div class="card">
-<h3>Network Security Deployment</h3>
-<p>Implemented firewall, VPN, and network segmentation improving overall security posture.</p>
+<h3>Network Security</h3>
+<p>Firewall + VPN deployment for secure access.</p>
 </div>
 
 </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section id="testimonials" class="section">
 <h2>Client Testimonials</h2>
 
-<div class="testimonials">
-
-<div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>
-"Alakesh delivered a seamless Microsoft 365 migration for our organization with zero downtime. His expertise in Exchange Online and security configurations is outstanding."
-</p>
-<p><strong>— IT Manager, Delhi-Based Enterprise</strong></p>
-</div>
-
-<div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>
-"We engaged Alakesh for Azure infrastructure and backup setup. His approach was highly professional, and he ensured cost optimization along with strong security practices."
-</p>
-<p><strong>— Cloud Operations Lead, IT Services Company</strong></p>
-</div>
-
-<div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>
-"Excellent networking and security expertise. Firewall and VPN setup was completed efficiently, and our network performance improved significantly."
-</p>
-<p><strong>— Network Administrator, Corporate Firm</strong></p>
-</div>
-
-<div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>
-"Strong knowledge of Microsoft Defender and security solutions. The SIEM and DLP implementation helped us improve compliance and threat visibility."
-</p>
-<p><strong>— Security Analyst, Consulting Organization</strong></p>
-</div>
-
+<div class="testimonial-box">
+<p class="stars">⭐⭐⭐⭐⭐</p>
+<p id="testimonial-text"></p>
+<p><strong id="testimonial-author"></strong></p>
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
 <h2>Contact</h2>
 <p><strong>Email:</strong> alakesh.gym@gmail.com</p>
@@ -249,8 +250,50 @@ Explore more:
 <script>
 function showSection(id){
 document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active')
+document.getElementById(id).classList.add('active');
 }
+
+/* Typing Effect */
+const text = "Microsoft 365 | Azure | Networking | Security Expert";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+/* Testimonials Slider */
+const testimonials=[
+{
+text:"Alakesh handled our Microsoft 365 migration flawlessly with zero downtime.",
+author:"— IT Manager, Enterprise"
+},
+{
+text:"Strong Azure expertise with cost optimization and security focus.",
+author:"— Cloud Lead"
+},
+{
+text:"Excellent firewall and VPN setup. Highly reliable consultant.",
+author:"— Network Admin"
+},
+{
+text:"Defender and SIEM implementation improved our security posture.",
+author:"— Security Analyst"
+}
+];
+
+let index=0;
+function showTestimonial(){
+document.getElementById("testimonial-text").innerText=testimonials[index].text;
+document.getElementById("testimonial-author").innerText=testimonials[index].author;
+index=(index+1)%testimonials.length;
+}
+
+setInterval(showTestimonial,3000);
+showTestimonial();
 </script>
 
 </body>
