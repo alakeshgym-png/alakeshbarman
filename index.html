@@ -6,6 +6,9 @@
 
 <title>Alakesh Barman | Microsoft 365 | Azure | Security Consultant</title>
 
+<meta name="description" content="Microsoft 365 Consultant in India, Azure Consultant in Delhi, Networking Consultant, Office 365 Security Expert.">
+<meta name="keywords" content="Microsoft 365 Consultant India, Azure Consultant Delhi, Networking Consultant India, Office 365 Security Expert">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,15 +20,8 @@ color:#e2e8f0;
 scroll-behavior:smooth;
 }
 
-/* HEADER */
-header{
-text-align:center;
-padding:30px;
-}
-
-header h1{
-font-size:32px;
-}
+header{text-align:center;padding:30px}
+header h1{font-size:32px}
 
 /* NAV */
 nav{
@@ -69,19 +65,9 @@ to{opacity:1;transform:translateY(0)}
 }
 
 /* HERO */
-.hero{
-text-align:center;
-padding:120px 20px;
-}
-
-.hero h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.highlight{
-color:#38bdf8;
-}
+.hero{text-align:center;padding:120px 20px}
+.hero h2{font-size:40px;margin-bottom:20px}
+.highlight{color:#38bdf8}
 
 /* BUTTON */
 .btn{
@@ -121,24 +107,33 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* TESTIMONIAL SLIDER */
+/* TESTIMONIAL */
 .testimonial-box{
 max-width:700px;
 margin:auto;
 text-align:center;
 }
 
-.stars{
-color:#facc15;
-font-size:20px;
+.stars{color:#facc15;font-size:20px}
+
+/* LINKS */
+.links{
+margin-top:30px;
+text-align:center;
+}
+
+.links a{
+color:#38bdf8;
+margin:0 10px;
+text-decoration:none;
+}
+
+.links a:hover{
+text-decoration:underline;
 }
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
+footer{text-align:center;padding:20px;margin-top:40px}
 
 /* WHATSAPP */
 .whatsapp{
@@ -173,13 +168,9 @@ text-decoration:none;
 <!-- HOME -->
 <section id="home" class="section active">
 <div class="hero">
-
 <h2 id="typing"></h2>
-
 <p>Helping businesses across India secure, scale, and modernize IT infrastructure.</p>
-
 <button class="btn" onclick="showSection('contact')">Get Free Consultation</button>
-
 </div>
 </section>
 
@@ -188,14 +179,21 @@ text-decoration:none;
 <h2>Services</h2>
 
 <div class="services">
-
-<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, Security</div>
+<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, DKIM, DMARC</div>
 <div class="card"><strong>Azure Cloud</strong><br>Infrastructure & Backup</div>
 <div class="card"><strong>Networking</strong><br>Firewall, VPN, LAN/WAN</div>
 <div class="card"><strong>Security</strong><br>Defender, SIEM, DLP</div>
 <div class="card"><strong>VDI & VMware</strong><br>Horizon Deployment</div>
-
 </div>
+
+<div class="links">
+<p>Explore detailed services:</p>
+<a href="microsoft365-consultant-india.html">Microsoft 365 Consultant</a> |
+<a href="azure-consultant-delhi.html">Azure Consultant</a> |
+<a href="office365-security-expert.html">Security Expert</a> |
+<a href="networking-consultant-india.html">Networking Consultant</a>
+</div>
+
 </section>
 
 <!-- CASES -->
@@ -203,22 +201,9 @@ text-decoration:none;
 <h2>Case Studies</h2>
 
 <div class="cases">
-
-<div class="card">
-<h3>M365 Migration</h3>
-<p>200+ users migrated with zero downtime.</p>
-</div>
-
-<div class="card">
-<h3>Azure Backup</h3>
-<p>Enterprise DR & backup solution deployed.</p>
-</div>
-
-<div class="card">
-<h3>Network Security</h3>
-<p>Firewall + VPN deployment for secure access.</p>
-</div>
-
+<div class="card"><h3>M365 Migration</h3><p>200+ users migrated with zero downtime.</p></div>
+<div class="card"><h3>Azure Backup</h3><p>Enterprise DR solution deployed.</p></div>
+<div class="card"><h3>Network Security</h3><p>Firewall & VPN implementation.</p></div>
 </div>
 </section>
 
@@ -254,7 +239,7 @@ document.getElementById(id).classList.add('active');
 }
 
 /* Typing Effect */
-const text = "Microsoft 365 | Azure | Networking | Security Expert";
+const text="Microsoft 365 | Azure | Networking | Security Expert";
 let i=0;
 function type(){
 if(i<text.length){
@@ -267,22 +252,10 @@ type();
 
 /* Testimonials Slider */
 const testimonials=[
-{
-text:"Alakesh handled our Microsoft 365 migration flawlessly with zero downtime.",
-author:"— IT Manager, Enterprise"
-},
-{
-text:"Strong Azure expertise with cost optimization and security focus.",
-author:"— Cloud Lead"
-},
-{
-text:"Excellent firewall and VPN setup. Highly reliable consultant.",
-author:"— Network Admin"
-},
-{
-text:"Defender and SIEM implementation improved our security posture.",
-author:"— Security Analyst"
-}
+{text:"Alakesh handled our Microsoft 365 migration flawlessly.",author:"— IT Manager"},
+{text:"Azure setup with strong security and optimization.",author:"— Cloud Lead"},
+{text:"Excellent networking and firewall expertise.",author:"— Network Admin"},
+{text:"Defender & SIEM improved our security posture.",author:"— Security Analyst"}
 ];
 
 let index=0;
