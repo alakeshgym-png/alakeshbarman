@@ -18,11 +18,54 @@ body{
   padding:20px;
 }
 
-h1{
-  text-align:center;
-  margin-bottom:30px;
+/* LOGIN */
+#loginBox{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
+.login-card{
+  background:#0f172a;
+  padding:30px;
+  border-radius:10px;
+  width:300px;
+  text-align:center;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  border-radius:6px;
+}
+
+button{
+  padding:10px;
+  width:100%;
+  background:#38bdf8;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* DASHBOARD */
+#dashboard{display:none;}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logout{
+  cursor:pointer;
+  color:#38bdf8;
+}
+
+/* TABLE */
 table{
   width:100%;
   border-collapse:collapse;
@@ -50,7 +93,25 @@ tr:hover{
 
 <body>
 
-<h1>📊 Enquiries Dashboard</h1>
+<!-- LOGIN -->
+
+<div id="loginBox">
+  <div class="login-card">
+    <h2>🔐 Admin Login</h2>
+    <input type="email" id="email" placeholder="Email" value="alakesh.gym@gmail.com">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+
+<div id="dashboard">
+
+<div class="header">
+  <h1>📊 Enquiries Dashboard</h1>
+  <div class="logout" onclick="logout()">Logout</div>
+</div>
 
 <table>
 <thead>
@@ -67,8 +128,11 @@ tr:hover{
 <tbody id="data"></tbody>
 </table>
 
+</div>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-auth.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -78,10 +142,43 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 
 const table = document.getElementById("data");
 
+/* LOGIN */
+window.login = async function(){
+  try{
+    await signInWithEmailAndPassword(auth,email.value,password.value);
+  }catch{
+    alert("❌ Invalid credentials");
+  }
+};
+
+/* LOGOUT */
+window.logout = function(){
+  signOut(auth);
+};
+
+/* AUTH CHECK */
+onAuthStateChanged(auth, user => {
+  if(user && user.email === "alakesh.gym@gmail.com"){
+    loginBox.style.display="none";
+    dashboard.style.display="block";
+    loadData();
+  }else{
+    loginBox.style.display="flex";
+    dashboard.style.display="none";
+
+    if(user){
+      alert("🚫 Unauthorized Access");
+      signOut(auth);
+    }
+  }
+});
+
+/* LOAD DATA */
 async function loadData(){
   const querySnapshot = await getDocs(collection(db, "enquiries"));
 
@@ -89,6 +186,8 @@ async function loadData(){
     table.innerHTML = "<tr><td colspan='6'>No enquiries found</td></tr>";
     return;
   }
+
+  table.innerHTML="";
 
   querySnapshot.forEach(doc => {
     const d = doc.data();
@@ -117,8 +216,6 @@ async function loadData(){
     table.innerHTML += row;
   });
 }
-
-loadData();
 </script>
 
 </body>
