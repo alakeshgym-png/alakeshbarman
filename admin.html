@@ -82,11 +82,6 @@ justify-content:space-between;
 align-items:center;
 }
 
-/* SEARCH */
-.search{
-margin-bottom:15px;
-}
-
 /* TABLE */
 .table-container{
 background:rgba(255,255,255,0.05);
@@ -180,8 +175,6 @@ const db = getFirestore(app);
 
 let allData = [];
 
-signOut(auth);
-
 /* LOGIN */
 window.login = async function(){
   try{
@@ -194,7 +187,7 @@ window.login = async function(){
 /* LOGOUT */
 window.logout = () => signOut(auth);
 
-/* AUTH */
+/* AUTH CHECK */
 onAuthStateChanged(auth, user => {
   if(user && user.email==="alakesh.gym@gmail.com"){
     loginBox.style.display="none";
