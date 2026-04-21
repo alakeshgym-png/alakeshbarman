@@ -33,14 +33,17 @@ width:350px;
 text-align:center;
 }
 
+/* INPUT */
 input{
 width:100%;
 padding:12px;
 margin:10px 0;
 border:none;
 border-radius:8px;
+outline:none;
 }
 
+/* BUTTON */
 button{
 width:100%;
 padding:12px;
@@ -54,6 +57,7 @@ font-weight:600;
 /* DASHBOARD */
 #dashboard{display:none;padding:20px;}
 
+/* HEADER */
 .header{
 display:flex;
 justify-content:space-between;
@@ -65,6 +69,22 @@ margin-bottom:20px;
 cursor:pointer;
 color:#38bdf8;
 font-weight:600;
+}
+
+/* STATS */
+.stats{
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* SEARCH */
+.search{
+margin-bottom:15px;
 }
 
 /* TABLE */
@@ -121,6 +141,11 @@ background:#1e293b;
 <div class="logout" onclick="logout()">Logout</div>
 </div>
 
+<div class="stats">
+<div>Total Enquiries: <strong id="count">0</strong></div>
+<input type="text" id="search" placeholder="Search..." style="width:200px;">
+</div>
+
 <div class="table-container">
 <table>
 <thead>
@@ -153,68 +178,77 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-/* FORCE LOGIN */
+let allData = [];
+
 signOut(auth);
 
 /* LOGIN */
 window.login = async function(){
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
   try{
-    await signInWithEmailAndPassword(auth,email,password);
-  }catch(err){
+    await signInWithEmailAndPassword(auth,email.value,password.value);
+  }catch{
     alert("❌ Invalid Email or Password");
   }
 };
 
 /* LOGOUT */
-window.logout = function(){
-  signOut(auth);
-};
+window.logout = () => signOut(auth);
 
-/* AUTH CHECK */
+/* AUTH */
 onAuthStateChanged(auth, user => {
-  if(user && user.email === "alakesh.gym@gmail.com"){
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("dashboard").style.display="block";
+  if(user && user.email==="alakesh.gym@gmail.com"){
+    loginBox.style.display="none";
+    dashboard.style.display="block";
     loadData();
   }else{
-    document.getElementById("loginBox").style.display="flex";
-    document.getElementById("dashboard").style.display="none";
-
-    if(user){
-      alert("🚫 Unauthorized Access");
-      signOut(auth);
-    }
+    loginBox.style.display="flex";
+    dashboard.style.display="none";
   }
 });
 
 /* LOAD DATA */
 async function loadData(){
   const snapshot = await getDocs(collection(db,"enquiries"));
-  const table = document.getElementById("data");
-  table.innerHTML="";
+  allData = [];
 
-  if(snapshot.empty){
-    table.innerHTML = "<tr><td colspan='5'>No enquiries found</td></tr>";
+  snapshot.forEach(doc=>{
+    allData.push(doc.data());
+  });
+
+  render(allData);
+}
+
+/* RENDER */
+function render(data){
+  dataEl.innerHTML="";
+  count.innerText=data.length;
+
+  if(data.length===0){
+    dataEl.innerHTML="<tr><td colspan='5'>No enquiries found</td></tr>";
     return;
   }
 
-  snapshot.forEach(doc=>{
-    const d = doc.data();
-
-    table.innerHTML += `
+  data.forEach(d=>{
+    dataEl.innerHTML+=`
     <tr>
-    <td>${d.name || ''}</td>
-    <td>${d.email || ''}</td>
-    <td>${d.phone || ''}</td>
-    <td>${d.service || ''}</td>
-    <td>${d.message || ''}</td>
-    </tr>
-    `;
+    <td>${d.name||''}</td>
+    <td>${d.email||''}</td>
+    <td>${d.phone||''}</td>
+    <td>${d.service||''}</td>
+    <td>${d.message||''}</td>
+    </tr>`;
   });
 }
+
+/* SEARCH */
+search.oninput=()=>{
+  const v=search.value.toLowerCase();
+  render(allData.filter(d=>
+    (d.name||'').toLowerCase().includes(v) ||
+    (d.email||'').toLowerCase().includes(v) ||
+    (d.service||'').toLowerCase().includes(v)
+  ));
+};
 </script>
 
 </body>
