@@ -1,50 +1,271 @@
-<!-- SAME CODE ABOVE (UNCHANGED) -->
+<!DOCTYPE html>
 
-<!-- ONLY ADDITIONS: ADMIN NAV + ADMIN SECTION + SCRIPT -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ADD THIS IN NAV -->
+<title>Alakesh Barman | Microsoft 365 | Azure | Security Consultant</title>
 
-<a onclick="showSection('admin')">Admin</a>
+<meta name="description" content="Microsoft 365 Consultant in India, Azure Consultant in Delhi, Networking Consultant, Office 365 Security Expert.">
 
-<!-- ADD THIS SECTION BELOW CONTACT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<section id="admin" class="section">
-<h2>📊 Enquiries Dashboard</h2>
+<style>
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:#e2e8f0;
+scroll-behavior:smooth;
+}
 
-<table style="width:100%;border-collapse:collapse;background:#0f172a;">
-<thead>
-<tr>
-<th>Name</th>
-<th>Email</th>
-<th>Phone</th>
-<th>Service</th>
-<th>Message</th>
-<th>Date</th>
-</tr>
-</thead>
-<tbody id="adminData"></tbody>
-</table>
+header{text-align:center;padding:30px}
+header h1{font-size:32px}
+
+nav{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:15px;
+position:sticky;
+top:0;
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+nav a{
+cursor:pointer;
+color:#cbd5f5;
+text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+transform:scale(1.1);
+}
+
+.section{
+display:none;
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+animation:fadeIn 0.6s ease;
+}
+
+.active{display:block}
+
+.hero{text-align:center;padding:120px 20px}
+.hero h2{font-size:40px;margin-bottom:20px}
+
+.btn{
+padding:14px 26px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+border:none;
+border-radius:8px;
+cursor:pointer;
+color:#000;
+font-weight:600;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:15px;
+padding:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+.services,.cases{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.testimonial-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.stars{color:#facc15;font-size:20px}
+
+.links{
+margin-top:30px;
+text-align:center;
+}
+
+.links a{
+color:#38bdf8;
+margin:0 10px;
+text-decoration:none;
+}
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+}
+
+input, textarea, select{
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Alakesh Barman Consulting</h1>
+<p>Cloud | Security | Networking Expert</p>
+</header>
+
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('services')">Services</a>
+<a onclick="showSection('cases')">Case Studies</a>
+<a onclick="showSection('testimonials')">Testimonials</a>
+<a onclick="showSection('contact')">Contact</a>
+</nav>
+
+<section id="home" class="section active">
+<div class="hero">
+<h2 id="typing"></h2>
+<p>Helping businesses across India secure, scale, and modernize IT infrastructure.</p>
+<button class="btn" onclick="showSection('contact')">Get Free Consultation</button>
+</div>
 </section>
 
-<!-- UPDATE FIREBASE SCRIPT -->
+<section id="services" class="section">
+<h2>Services</h2>
+<div class="services">
+<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, DKIM, DMARC</div>
+<div class="card"><strong>Azure Cloud</strong><br>Infrastructure & Backup</div>
+<div class="card"><strong>Networking</strong><br>Firewall, VPN, LAN/WAN</div>
+<div class="card"><strong>Security</strong><br>Defender, SIEM, DLP</div>
+<div class="card"><strong>VDI & VMware</strong><br>Horizon Deployment</div>
+</div>
+
+<div class="links">
+<a href="microsoft365-consultant-india.html">Microsoft 365 Consultant</a>
+<a href="azure-consultant-delhi.html">Azure Consultant</a>
+<a href="office365-security-expert.html">Security Expert</a>
+<a href="networking-consultant-india.html">Networking Consultant</a>
+</div>
+</section>
+
+<section id="cases" class="section">
+<h2>Case Studies</h2>
+<div class="cases">
+<div class="card">M365 Migration (200+ users)</div>
+<div class="card">Azure Backup Solution</div>
+<div class="card">Network Security Deployment</div>
+</div>
+</section>
+
+<section id="testimonials" class="section">
+<h2>Client Testimonials</h2>
+<div class="testimonial-box">
+<p class="stars">⭐⭐⭐⭐⭐</p>
+<p id="testimonial-text"></p>
+<p><strong id="testimonial-author"></strong></p>
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact / Get Consultation</h2>
+
+<form onsubmit="submitForm(event)">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+<select name="service" required>
+<option value="">Select Service</option>
+<option>Microsoft 365</option>
+<option>Azure</option>
+<option>Networking</option>
+<option>Security</option>
+<option>VDI & VMware</option>
+</select>
+
+<textarea name="message" placeholder="Describe your requirement..." required></textarea>
+
+<button class="btn" type="submit">Submit Enquiry</button>
+
+</form>
+
+<p><strong>Email:</strong> alakesh.gym@gmail.com</p>
+<p><strong>Phone:</strong> +91 9910933716</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919910933716" target="_blank">💬</a>
+
+<script>
+function showSection(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+const text="Microsoft 365 | Azure | Networking | Security Expert";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+const testimonials=[
+{text:"Alakesh handled our Microsoft 365 migration flawlessly.",author:"— IT Manager"},
+{text:"Azure setup with strong security and optimization.",author:"— Cloud Lead"},
+{text:"Excellent networking and firewall expertise.",author:"— Network Admin"},
+{text:"Defender & SIEM improved our security posture.",author:"— Security Analyst"}
+];
+
+let index=0;
+function showTestimonial(){
+document.getElementById("testimonial-text").innerText=testimonials[index].text;
+document.getElementById("testimonial-author").innerText=testimonials[index].author;
+index=(index+1)%testimonials.length;
+}
+setInterval(showTestimonial,3000);
+showTestimonial();
+</script>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCi7v9VpYfYS671vwym038Gbaghyw39qUE",
   authDomain: "alakesh-consulting.firebaseapp.com",
-  projectId: "alakesh-consulting",
-  storageBucket: "alakesh-consulting.firebasestorage.app",
-  messagingSenderId: "125264295296",
-  appId: "1:125264295296:web:bf72dc33f7b648994d3d65"
+  projectId: "alakesh-consulting"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-/* FORM SUBMIT */
 window.submitForm = async function(e) {
   e.preventDefault();
 
@@ -66,52 +287,7 @@ window.submitForm = async function(e) {
   alert("✅ Enquiry submitted!");
   e.target.reset();
 };
-
-/* LOAD ADMIN DATA */
-async function loadAdminData(){
-  const table = document.getElementById("adminData");
-  table.innerHTML = "";
-
-  const querySnapshot = await getDocs(collection(db, "enquiries"));
-
-  if(querySnapshot.empty){
-    table.innerHTML = "<tr><td colspan='6'>No enquiries found</td></tr>";
-    return;
-  }
-
-  querySnapshot.forEach(doc => {
-    const d = doc.data();
-
-    let date = "";
-    if(d.createdAt){
-      if(d.createdAt.seconds){
-        date = new Date(d.createdAt.seconds * 1000).toLocaleString();
-      } else {
-        date = new Date(d.createdAt).toLocaleString();
-      }
-    }
-
-    const row = `
-      <tr>
-        <td>${d.name || ''}</td>
-        <td>${d.email || ''}</td>
-        <td>${d.phone || ''}</td>
-        <td>${d.service || ''}</td>
-        <td>${d.message || ''}</td>
-        <td>${date}</td>
-      </tr>
-    `;
-
-    table.innerHTML += row;
-  });
-}
-
-/* LOAD DATA WHEN ADMIN OPENED */
-const originalShowSection = window.showSection;
-window.showSection = function(id){
-  originalShowSection(id);
-  if(id === "admin"){
-    loadAdminData();
-  }
-};
 </script>
+
+</body>
+</html>
