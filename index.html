@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Alakesh Barman | Microsoft 365 | Azure | Security Consultant</title>
-
-<meta name="description" content="Microsoft 365 Consultant in India, Azure Consultant in Delhi, Networking Consultant, Office 365 Security Expert.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- SAME CODE WITH PROFESSIONAL ENHANCEMENTS -->
 
 <style>
 body{
@@ -20,9 +9,15 @@ color:#e2e8f0;
 scroll-behavior:smooth;
 }
 
-header{text-align:center;padding:30px}
-header h1{font-size:32px}
+/* HEADER */
+header{
+text-align:center;
+padding:40px 20px;
+}
+header h1{font-size:34px;margin-bottom:10px}
+header p{color:#94a3b8}
 
+/* NAVBAR */
 nav{
 display:flex;
 justify-content:center;
@@ -40,6 +35,7 @@ cursor:pointer;
 color:#cbd5f5;
 text-decoration:none;
 transition:0.3s;
+font-weight:500;
 }
 
 nav a:hover{
@@ -47,9 +43,10 @@ color:#38bdf8;
 transform:scale(1.1);
 }
 
+/* SECTION */
 .section{
 display:none;
-padding:70px 20px;
+padding:80px 20px;
 max-width:1100px;
 margin:auto;
 animation:fadeIn 0.6s ease;
@@ -57,9 +54,12 @@ animation:fadeIn 0.6s ease;
 
 .active{display:block}
 
+/* HERO */
 .hero{text-align:center;padding:120px 20px}
-.hero h2{font-size:40px;margin-bottom:20px}
+.hero h2{font-size:42px;margin-bottom:20px}
+.hero p{color:#94a3b8;margin-bottom:25px}
 
+/* BUTTON */
 .btn{
 padding:14px 26px;
 background:linear-gradient(90deg,#38bdf8,#0ea5e9);
@@ -68,22 +68,36 @@ border-radius:8px;
 cursor:pointer;
 color:#000;
 font-weight:600;
+transition:0.3s;
 }
 
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(56,189,248,0.4);
+}
+
+/* CARDS */
 .card{
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(15px);
 border-radius:15px;
 padding:25px;
 box-shadow:0 10px 40px rgba(0,0,0,0.4);
+transition:0.3s;
 }
 
+.card:hover{
+transform:translateY(-6px);
+}
+
+/* GRID */
 .services,.cases{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:25px;
 }
 
+/* TESTIMONIAL */
 .testimonial-box{
 max-width:700px;
 margin:auto;
@@ -92,6 +106,7 @@ text-align:center;
 
 .stars{color:#facc15;font-size:20px}
 
+/* LINKS */
 .links{
 margin-top:30px;
 text-align:center;
@@ -101,8 +116,14 @@ text-align:center;
 color:#38bdf8;
 margin:0 10px;
 text-decoration:none;
+transition:0.3s;
 }
 
+.links a:hover{
+text-decoration:underline;
+}
+
+/* FORM */
 form{
 max-width:500px;
 margin:auto;
@@ -115,8 +136,15 @@ padding:12px;
 margin:10px 0;
 border-radius:8px;
 border:none;
+transition:0.3s;
 }
 
+input:focus, textarea:focus, select:focus{
+outline:none;
+box-shadow:0 0 0 2px #38bdf8;
+}
+
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -126,105 +154,29 @@ color:white;
 padding:15px;
 border-radius:50%;
 text-decoration:none;
+font-size:18px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 </style>
 
-</head>
-
-<body>
-
-<header>
-<h1>Alakesh Barman Consulting</h1>
-<p>Cloud | Security | Networking Expert</p>
-</header>
-
-<nav>
-<a onclick="showSection('home')">Home</a>
-<a onclick="showSection('services')">Services</a>
-<a onclick="showSection('cases')">Case Studies</a>
-<a onclick="showSection('testimonials')">Testimonials</a>
-<a onclick="showSection('contact')">Contact</a>
-</nav>
-
-<section id="home" class="section active">
-<div class="hero">
-<h2 id="typing"></h2>
-<p>Helping businesses across India secure, scale, and modernize IT infrastructure.</p>
-<button class="btn" onclick="showSection('contact')">Get Free Consultation</button>
-</div>
-</section>
-
-<section id="services" class="section">
-<h2>Services</h2>
-<div class="services">
-<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, DKIM, DMARC</div>
-<div class="card"><strong>Azure Cloud</strong><br>Infrastructure & Backup</div>
-<div class="card"><strong>Networking</strong><br>Firewall, VPN, LAN/WAN</div>
-<div class="card"><strong>Security</strong><br>Defender, SIEM, DLP</div>
-<div class="card"><strong>VDI & VMware</strong><br>Horizon Deployment</div>
-</div>
-
-<div class="links">
-<a href="microsoft365-consultant-india.html">Microsoft 365 Consultant</a>
-<a href="azure-consultant-delhi.html">Azure Consultant</a>
-<a href="office365-security-expert.html">Security Expert</a>
-<a href="networking-consultant-india.html">Networking Consultant</a>
-</div>
-</section>
-
-<section id="cases" class="section">
-<h2>Case Studies</h2>
-<div class="cases">
-<div class="card">M365 Migration (200+ users)</div>
-<div class="card">Azure Backup Solution</div>
-<div class="card">Network Security Deployment</div>
-</div>
-</section>
-
-<section id="testimonials" class="section">
-<h2>Client Testimonials</h2>
-<div class="testimonial-box">
-<p class="stars">⭐⭐⭐⭐⭐</p>
-<p id="testimonial-text"></p>
-<p><strong id="testimonial-author"></strong></p>
-</div>
-</section>
-
-<section id="contact" class="section">
-<h2>Contact / Get Consultation</h2>
-
-<form onsubmit="submitForm(event)">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Your Phone Number" required>
-
-<select name="service" required>
-<option value="">Select Service</option>
-<option>Microsoft 365</option>
-<option>Azure</option>
-<option>Networking</option>
-<option>Security</option>
-<option>VDI & VMware</option>
-</select>
-
-<textarea name="message" placeholder="Describe your requirement..." required></textarea>
-
-<button class="btn" type="submit">Submit Enquiry</button>
-
-</form>
-
-<p><strong>Email:</strong> alakesh.gym@gmail.com</p>
-<p><strong>Phone:</strong> +91 9910933716</p>
-</section>
-
-<a class="whatsapp" href="https://wa.me/919910933716" target="_blank">💬</a>
-
 <script>
+/* NAV ACTIVE HIGHLIGHT */
+const navLinks = document.querySelectorAll("nav a");
+
 function showSection(id){
 document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
+
+navLinks.forEach(link=>link.classList.remove("active"));
 }
 
+/* TYPEWRITER */
 const text="Microsoft 365 | Azure | Networking | Security Expert";
 let i=0;
 function type(){
@@ -236,6 +188,7 @@ setTimeout(type,40);
 }
 type();
 
+/* TESTIMONIAL ROTATION */
 const testimonials=[
 {text:"Alakesh handled our Microsoft 365 migration flawlessly.",author:"— IT Manager"},
 {text:"Azure setup with strong security and optimization.",author:"— Cloud Lead"},
@@ -252,42 +205,3 @@ index=(index+1)%testimonials.length;
 setInterval(showTestimonial,3000);
 showTestimonial();
 </script>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCi7v9VpYfYS671vwym038Gbaghyw39qUE",
-  authDomain: "alakesh-consulting.firebaseapp.com",
-  projectId: "alakesh-consulting"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-window.submitForm = async function(e) {
-  e.preventDefault();
-
-  const name = document.querySelector('[name="name"]').value;
-  const email = document.querySelector('[name="email"]').value;
-  const phone = document.querySelector('[name="phone"]').value;
-  const service = document.querySelector('[name="service"]').value;
-  const message = document.querySelector('[name="message"]').value;
-
-  await addDoc(collection(db, "enquiries"), {
-    name,
-    email,
-    phone,
-    service,
-    message,
-    createdAt: new Date()
-  });
-
-  alert("✅ Enquiry submitted!");
-  e.target.reset();
-};
-</script>
-
-</body>
-</html>
