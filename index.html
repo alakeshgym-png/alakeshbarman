@@ -5,105 +5,127 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alakesh Barman | IT Consultant</title>
+<title>Alakesh Barman | Microsoft 365 | Azure | Security Consultant</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<meta name="description" content="Microsoft 365 Consultant in India, Azure Consultant in Delhi, Networking Consultant, Office 365 Security Expert.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-  font-family:'Inter',sans-serif;
-  margin:0;
-  background:#020617;
-  color:white;
+margin:0;
+font-family:'Inter',sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:#e2e8f0;
+scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+header{text-align:center;padding:30px}
+header h1{font-size:32px}
+
 nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 30px;
-  background:#020617;
-  position:sticky;
-  top:0;
+display:flex;
+justify-content:center;
+gap:25px;
+padding:15px;
+position:sticky;
+top:0;
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(12px);
+z-index:1000;
 }
 
 nav a{
-  color:white;
-  margin-left:15px;
-  text-decoration:none;
+cursor:pointer;
+color:#cbd5f5;
+text-decoration:none;
+transition:0.3s;
 }
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:80px 20px;
+nav a:hover{
+color:#38bdf8;
+transform:scale(1.1);
 }
 
-.hero h1{
-  font-size:40px;
-}
-
-.hero button{
-  padding:12px 20px;
-  background:#38bdf8;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-}
-
-/* SECTION */
 .section{
-  padding:60px 20px;
-  text-align:center;
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
+display:none;
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+animation:fadeIn 0.6s ease;
 }
 
-.section.show{
-  opacity:1;
-  transform:translateY(0);
-}
+.active{display:block}
 
-/* CARDS */
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+.hero{text-align:center;padding:120px 20px}
+.hero h2{font-size:40px;margin-bottom:20px}
+
+.btn{
+padding:14px 26px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+border:none;
+border-radius:8px;
+cursor:pointer;
+color:#000;
+font-weight:600;
 }
 
 .card{
-  background:#0f172a;
-  padding:20px;
-  border-radius:10px;
-  width:250px;
-  transition:0.3s;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-radius:15px;
+padding:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
 }
 
-.card:hover{
-  transform:translateY(-5px);
+.services,.cases{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-/* CONTACT */
+.testimonial-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.stars{color:#facc15;font-size:20px}
+
+.links{
+margin-top:30px;
+text-align:center;
+}
+
+.links a{
+color:#38bdf8;
+margin:0 10px;
+text-decoration:none;
+}
+
 form{
-  max-width:400px;
-  margin:auto;
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
 }
 
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:none;
-  border-radius:6px;
+input, textarea, select{
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#0f172a;
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
 }
 </style>
 
@@ -111,73 +133,160 @@ footer{
 
 <body>
 
+<header>
+<h1>Alakesh Barman Consulting</h1>
+<p>Cloud | Security | Networking Expert</p>
+</header>
+
 <nav>
-  <div><b>Alakesh Barman</b></div>
-  <div>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('services')">Services</a>
+<a onclick="showSection('cases')">Case Studies</a>
+<a onclick="showSection('testimonials')">Testimonials</a>
+<a onclick="showSection('contact')">Contact</a>
 </nav>
 
-<section class="hero">
-  <h1>IT Consultant & Cloud Expert</h1>
-  <p>Microsoft 365 | Azure | Networking | Security</p>
-  <button onclick="document.getElementById('contact').scrollIntoView()">Contact Me</button>
+<section id="home" class="section active">
+<div class="hero">
+<h2 id="typing"></h2>
+<p>Helping businesses across India secure, scale, and modernize IT infrastructure.</p>
+<button class="btn" onclick="showSection('contact')">Get Free Consultation</button>
+</div>
 </section>
 
 <section id="services" class="section">
-  <h2>Services</h2>
+<h2>Services</h2>
+<div class="services">
+<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, DKIM, DMARC</div>
+<div class="card"><strong>Azure Cloud</strong><br>Infrastructure & Backup</div>
+<div class="card"><strong>Networking</strong><br>Firewall, VPN, LAN/WAN</div>
+<div class="card"><strong>Security</strong><br>Defender, SIEM, DLP</div>
+<div class="card"><strong>VDI & VMware</strong><br>Horizon Deployment</div>
+</div>
 
-  <div class="cards">
-    <div class="card">Microsoft 365 Consulting</div>
-    <div class="card">Azure Cloud Solutions</div>
-    <div class="card">Office 365 Security</div>
-    <div class="card">VMware VDI Consulting</div>
-    <div class="card">Networking Consulting</div>
-  </div>
+<div class="links">
+<a href="microsoft365-consultant-india.html">Microsoft 365 Consultant</a>
+<a href="azure-consultant-delhi.html">Azure Consultant</a>
+<a href="office365-security-expert.html">Security Expert</a>
+<a href="networking-consultant-india.html">Networking Consultant</a>
+</div>
+</section>
+
+<section id="cases" class="section">
+<h2>Case Studies</h2>
+<div class="cases">
+<div class="card">M365 Migration (200+ users)</div>
+<div class="card">Azure Backup Solution</div>
+<div class="card">Network Security Deployment</div>
+</div>
+</section>
+
+<section id="testimonials" class="section">
+<h2>Client Testimonials</h2>
+<div class="testimonial-box">
+<p class="stars">⭐⭐⭐⭐⭐</p>
+<p id="testimonial-text"></p>
+<p><strong id="testimonial-author"></strong></p>
+</div>
 </section>
 
 <section id="contact" class="section">
-  <h2>Contact Me</h2>
+<h2>Contact / Get Consultation</h2>
 
-  <form onsubmit="submitForm(event)">
-    <input type="text" placeholder="Name" required>
-    <input type="email" placeholder="Email" required>
-    <input type="text" placeholder="Phone">
-    <textarea placeholder="Message"></textarea>
-    <button type="submit">Submit</button>
-  </form>
+<form onsubmit="submitForm(event)">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Your Phone Number" required>
 
-  <p>Email: alakesh.gym@gmail.com</p>
-  <p>Phone: +91 9910933716</p>
+<select name="service" required>
+<option value="">Select Service</option>
+<option>Microsoft 365</option>
+<option>Azure</option>
+<option>Networking</option>
+<option>Security</option>
+<option>VDI & VMware</option>
+</select>
+
+<textarea name="message" placeholder="Describe your requirement..." required></textarea>
+
+<button class="btn" type="submit">Submit Enquiry</button>
+
+</form>
+
+<p><strong>Email:</strong> alakesh.gym@gmail.com</p>
+<p><strong>Phone:</strong> +91 9910933716</p>
 </section>
 
-<footer>
-  © 2026 Alakesh Barman | IT Consulting
-</footer>
+<a class="whatsapp" href="https://wa.me/919910933716" target="_blank">💬</a>
 
 <script>
-
-/* SCROLL ANIMATION */
-const sections = document.querySelectorAll('.section');
-
-window.addEventListener('scroll', () => {
-  sections.forEach(section => {
-    const position = section.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-
-    if(position < screenPosition){
-      section.classList.add('show');
-    }
-  });
-});
-
-/* FORM */
-function submitForm(e){
-  e.preventDefault();
-  alert("Thank you! I will contact you soon.");
+function showSection(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
 }
 
+const text="Microsoft 365 | Azure | Networking | Security Expert";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+const testimonials=[
+{text:"Alakesh handled our Microsoft 365 migration flawlessly.",author:"— IT Manager"},
+{text:"Azure setup with strong security and optimization.",author:"— Cloud Lead"},
+{text:"Excellent networking and firewall expertise.",author:"— Network Admin"},
+{text:"Defender & SIEM improved our security posture.",author:"— Security Analyst"}
+];
+
+let index=0;
+function showTestimonial(){
+document.getElementById("testimonial-text").innerText=testimonials[index].text;
+document.getElementById("testimonial-author").innerText=testimonials[index].author;
+index=(index+1)%testimonials.length;
+}
+setInterval(showTestimonial,3000);
+showTestimonial();
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCi7v9VpYfYS671vwym038Gbaghyw39qUE",
+  authDomain: "alakesh-consulting.firebaseapp.com",
+  projectId: "alakesh-consulting"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.submitForm = async function(e) {
+  e.preventDefault();
+
+  const name = document.querySelector('[name="name"]').value;
+  const email = document.querySelector('[name="email"]').value;
+  const phone = document.querySelector('[name="phone"]').value;
+  const service = document.querySelector('[name="service"]').value;
+  const message = document.querySelector('[name="message"]').value;
+
+  await addDoc(collection(db, "enquiries"), {
+    name,
+    email,
+    phone,
+    service,
+    message,
+    createdAt: new Date()
+  });
+
+  alert("✅ Enquiry submitted!");
+  e.target.reset();
+};
 </script>
 
 </body>
