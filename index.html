@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,6 +10,11 @@
 <meta name="description" content="Microsoft 365, Azure, Networking, Security, Power BI, Tableau, and Python Consultant in India. Expert in cloud, automation, and data solutions.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- ✅ PWA ADDITION -->
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#020617">
 
 <style>
 body{
@@ -235,6 +241,7 @@ to{opacity:1;transform:translateY(0)}
 <textarea name="message" placeholder="Describe your requirement..." required></textarea>
 
 <button class="btn" type="submit">Submit Enquiry</button>
+
 </form>
 
 <p><strong>Email:</strong> alakesh.gym@gmail.com</p>
@@ -311,6 +318,16 @@ window.submitForm = async function(e) {
   alert("✅ Enquiry submitted!");
   e.target.reset();
 };
+</script>
+
+<!-- ✅ SERVICE WORKER -->
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log("Service Worker Registered"))
+    .catch(err => console.log("SW Error:", err));
+}
 </script>
 
 </body>
