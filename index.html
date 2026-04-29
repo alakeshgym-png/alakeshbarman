@@ -11,10 +11,26 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- ✅ PWA ADDITION -->
+<!-- PWA -->
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#020617">
+
+<!-- iOS SUPPORT -->
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Alakesh Consulting">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<!-- iOS SPLASH SCREENS -->
+
+<link rel="apple-touch-startup-image" href="splash-828x1792.png">
+<link rel="apple-touch-startup-image" href="splash-1125x2436.png">
+<link rel="apple-touch-startup-image" href="splash-1242x2688.png">
+<link rel="apple-touch-startup-image" href="splash-1536x2048.png">
+<link rel="apple-touch-startup-image" href="splash-1668x2224.png">
+<link rel="apple-touch-startup-image" href="splash-2048x2732.png">
 
 <style>
 body{
@@ -320,7 +336,7 @@ window.submitForm = async function(e) {
 };
 </script>
 
-<!-- ✅ SERVICE WORKER -->
+<!-- SERVICE WORKER -->
 
 <script>
 if ('serviceWorker' in navigator) {
