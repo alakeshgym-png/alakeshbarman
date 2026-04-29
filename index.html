@@ -23,7 +23,7 @@
 <meta name="apple-mobile-web-app-title" content="Alakesh Consulting">
 <link rel="apple-touch-icon" href="icon-192.png">
 
-<!-- iOS SPLASH SCREENS -->
+<!-- iOS SPLASH -->
 
 <link rel="apple-touch-startup-image" href="splash-828x1792.png">
 <link rel="apple-touch-startup-image" href="splash-1125x2436.png">
@@ -41,9 +41,11 @@ color:#e2e8f0;
 scroll-behavior:smooth;
 }
 
+/* HEADER */
 header{text-align:center;padding:30px}
 header h1{font-size:32px}
 
+/* NAV */
 nav{
 display:flex;
 justify-content:center;
@@ -54,8 +56,10 @@ top:0;
 background:rgba(2,6,23,0.7);
 backdrop-filter:blur(12px);
 z-index:1000;
+flex-wrap:wrap;
 }
 
+/* LINKS */
 nav a{
 cursor:pointer;
 color:#cbd5f5;
@@ -68,6 +72,7 @@ color:#38bdf8;
 transform:scale(1.05);
 }
 
+/* SECTIONS */
 .section{
 display:none;
 padding:70px 20px;
@@ -78,9 +83,11 @@ animation:fadeIn 0.6s ease;
 
 .active{display:block}
 
+/* HERO */
 .hero{text-align:center;padding:120px 20px}
 .hero h2{font-size:40px;margin-bottom:20px}
 
+/* BUTTON */
 .btn{
 padding:14px 26px;
 background:linear-gradient(90deg,#38bdf8,#0ea5e9);
@@ -97,6 +104,7 @@ transform:translateY(-2px);
 box-shadow:0 10px 20px rgba(56,189,248,0.3);
 }
 
+/* CARD */
 .card{
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(15px);
@@ -110,12 +118,14 @@ transition:0.3s;
 transform:translateY(-5px);
 }
 
+/* GRID */
 .services,.cases{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
+/* TESTIMONIAL */
 .testimonial-box{
 max-width:700px;
 margin:auto;
@@ -124,21 +134,13 @@ text-align:center;
 
 .stars{color:#facc15;font-size:20px}
 
+/* LINKS */
 .links{
 margin-top:30px;
 text-align:center;
 }
 
-.links a{
-color:#38bdf8;
-margin:0 10px;
-text-decoration:none;
-}
-
-.links a:hover{
-text-decoration:underline;
-}
-
+/* FORM */
 form{
 max-width:500px;
 margin:auto;
@@ -153,11 +155,7 @@ border-radius:8px;
 border:none;
 }
 
-input:focus, textarea:focus, select:focus{
-outline:none;
-box-shadow:0 0 0 2px #38bdf8;
-}
-
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -169,9 +167,50 @@ border-radius:50%;
 text-decoration:none;
 }
 
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px)}
-to{opacity:1;transform:translateY(0)}
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px){
+
+header h1{font-size:22px}
+
+.hero{
+padding:60px 15px;
+}
+
+.hero h2{
+font-size:24px;
+line-height:1.4;
+}
+
+.section{
+padding:40px 15px;
+}
+
+/* STACK GRID */
+.services,
+.cases{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:18px;
+}
+
+.btn{
+width:100%;
+}
+
+/* NAV MOBILE */
+nav{
+gap:10px;
+font-size:14px;
+}
+
+.whatsapp{
+bottom:15px;
+right:15px;
+padding:12px;
+}
+
 }
 </style>
 
@@ -336,13 +375,9 @@ window.submitForm = async function(e) {
 };
 </script>
 
-<!-- SERVICE WORKER -->
-
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
-    .then(() => console.log("Service Worker Registered"))
-    .catch(err => console.log("SW Error:", err));
 }
 </script>
 
