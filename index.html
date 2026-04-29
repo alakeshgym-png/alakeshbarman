@@ -7,7 +7,7 @@
 
 <title>Alakesh Barman | Microsoft 365 | Azure | Security Consultant</title>
 
-<meta name="description" content="Microsoft 365, Azure, Networking, Security, Power BI, Tableau, and Python Consultant in India. Expert in cloud, automation, and data solutions.">
+<meta name="description" content="Microsoft 365, Azure, Networking, Security, Power BI, Tableau, and Python Consultant in India.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,14 +16,14 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#020617">
 
-<!-- iOS SUPPORT -->
+<!-- iOS -->
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Alakesh Consulting">
 <link rel="apple-touch-icon" href="icon-192.png">
 
-<!-- iOS SPLASH -->
+<!-- Splash -->
 
 <link rel="apple-touch-startup-image" href="splash-828x1792.png">
 <link rel="apple-touch-startup-image" href="splash-1125x2436.png">
@@ -38,14 +38,13 @@ margin:0;
 font-family:'Inter',sans-serif;
 background:linear-gradient(135deg,#020617,#0f172a);
 color:#e2e8f0;
-scroll-behavior:smooth;
 }
 
 /* HEADER */
 header{text-align:center;padding:30px}
 header h1{font-size:32px}
 
-/* NAV */
+/* DESKTOP NAV */
 nav{
 display:flex;
 justify-content:center;
@@ -54,22 +53,12 @@ padding:15px;
 position:sticky;
 top:0;
 background:rgba(2,6,23,0.7);
-backdrop-filter:blur(12px);
 z-index:1000;
-flex-wrap:wrap;
 }
 
-/* LINKS */
 nav a{
 cursor:pointer;
 color:#cbd5f5;
-text-decoration:none;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-transform:scale(1.05);
 }
 
 /* SECTIONS */
@@ -78,44 +67,21 @@ display:none;
 padding:70px 20px;
 max-width:1100px;
 margin:auto;
-animation:fadeIn 0.6s ease;
 }
 
 .active{display:block}
 
 /* HERO */
 .hero{text-align:center;padding:120px 20px}
-.hero h2{font-size:40px;margin-bottom:20px}
+.hero h2{font-size:40px}
 
 /* BUTTON */
 .btn{
-padding:14px 26px;
-background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+padding:14px;
+background:#38bdf8;
 border:none;
 border-radius:8px;
 cursor:pointer;
-color:#000;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 20px rgba(56,189,248,0.3);
-}
-
-/* CARD */
-.card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-border-radius:15px;
-padding:25px;
-box-shadow:0 10px 40px rgba(0,0,0,0.4);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
 }
 
 /* GRID */
@@ -125,19 +91,11 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-/* TESTIMONIAL */
-.testimonial-box{
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-.stars{color:#facc15;font-size:20px}
-
-/* LINKS */
-.links{
-margin-top:30px;
-text-align:center;
+/* CARD */
+.card{
+background:#0f172a;
+padding:20px;
+border-radius:10px;
 }
 
 /* FORM */
@@ -161,54 +119,76 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:white;
 padding:15px;
 border-radius:50%;
-text-decoration:none;
 }
 
-/* ================= MOBILE FIX ================= */
-@media (max-width: 768px){
+/* ================= MOBILE APP UI ================= */
+.app-nav{display:none;}
 
-header h1{font-size:22px}
+@media (max-width:768px){
 
-.hero{
-padding:60px 15px;
+/* Hide desktop nav */
+nav{display:none;}
+
+/* Header app style */
+header{
+position:sticky;
+top:0;
+background:#020617;
+padding:15px;
+border-bottom:1px solid #1e293b;
 }
 
-.hero h2{
-font-size:24px;
-line-height:1.4;
-}
+header h1{font-size:18px}
 
+/* Sections full screen */
 .section{
-padding:40px 15px;
+min-height:100vh;
+padding:40px 15px 80px;
 }
 
-/* STACK GRID */
-.services,
-.cases{
+/* Hero */
+.hero{
+padding:40px 10px;
+}
+
+.hero h2{font-size:24px}
+
+/* Stack grid */
+.services,.cases{
 grid-template-columns:1fr;
 }
 
-.card{
-padding:18px;
-}
-
+/* Full width button */
 .btn{
 width:100%;
 }
 
-/* NAV MOBILE */
-nav{
-gap:10px;
-font-size:14px;
+/* WhatsApp reposition */
+.whatsapp{
+bottom:80px;
+right:15px;
 }
 
-.whatsapp{
-bottom:15px;
-right:15px;
-padding:12px;
+/* Bottom app nav */
+.app-nav{
+display:flex;
+position:fixed;
+bottom:0;
+width:100%;
+background:#020617;
+border-top:1px solid #1e293b;
+justify-content:space-around;
+padding:10px 0;
+z-index:1000;
+}
+
+.app-nav button{
+background:none;
+border:none;
+color:#38bdf8;
+font-size:20px;
 }
 
 }
@@ -220,90 +200,70 @@ padding:12px;
 
 <header>
 <h1>Alakesh Barman Consulting</h1>
-<p>Cloud | Security | Networking | Data & Automation Expert</p>
+<p>Cloud | Security | Networking | Data</p>
 </header>
 
 <nav>
 <a onclick="showSection('home')">Home</a>
 <a onclick="showSection('services')">Services</a>
-<a onclick="showSection('cases')">Case Studies</a>
-<a onclick="showSection('testimonials')">Testimonials</a>
+<a onclick="showSection('cases')">Cases</a>
 <a onclick="showSection('contact')">Contact</a>
 </nav>
 
 <section id="home" class="section active">
 <div class="hero">
 <h2 id="typing"></h2>
-<p>Helping businesses across India secure, scale, and modernize IT infrastructure.</p>
-<button class="btn" onclick="showSection('contact')">Get Free Consultation</button>
+<p>Helping businesses scale securely.</p>
+<button class="btn" onclick="showSection('contact')">Get Consultation</button>
 </div>
 </section>
 
 <section id="services" class="section">
 <h2>Services</h2>
 <div class="services">
-<div class="card"><strong>Microsoft 365</strong><br>Migration, MFA, DKIM, DMARC</div>
-<div class="card"><strong>Azure Cloud</strong><br>Infrastructure, Security & Backup</div>
-<div class="card"><strong>Networking</strong><br>Firewall, VPN, LAN/WAN</div>
-<div class="card"><strong>Security</strong><br>Defender, SIEM, DLP</div>
-<div class="card"><strong>VDI & VMware</strong><br>Horizon Deployment</div>
-<div class="card"><strong>Power BI</strong><br>Dashboards, Reports, Data Visualization</div>
-<div class="card"><strong>Tableau</strong><br>Business Intelligence & Analytics</div>
-<div class="card"><strong>Python Automation</strong><br>Scripting, Data Processing, Automation</div>
+<div class="card">Microsoft 365</div>
+<div class="card">Azure</div>
+<div class="card">Networking</div>
+<div class="card">Security</div>
+<div class="card">Power BI</div>
+<div class="card">Python</div>
 </div>
 </section>
 
 <section id="cases" class="section">
 <h2>Case Studies</h2>
 <div class="cases">
-<div class="card">M365 Migration (200+ users)</div>
-<div class="card">Azure Backup Solution</div>
-<div class="card">Network Security Deployment</div>
-<div class="card">Power BI Dashboard for IT Operations</div>
-<div class="card">Python Automation for Reporting</div>
-</div>
-</section>
-
-<section id="testimonials" class="section">
-<h2>Client Testimonials</h2>
-<div class="testimonial-box">
-<p class="stars">⭐⭐⭐⭐⭐</p>
-<p id="testimonial-text"></p>
-<p><strong id="testimonial-author"></strong></p>
+<div class="card">M365 Migration</div>
+<div class="card">Azure Backup</div>
+<div class="card">Security Deployment</div>
 </div>
 </section>
 
 <section id="contact" class="section">
-<h2>Contact / Get Consultation</h2>
+<h2>Contact</h2>
 
 <form onsubmit="submitForm(event)">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Your Phone Number" required>
-
-<select name="service" required>
-<option value="">Select Service</option>
-<option>Microsoft 365</option>
-<option>Azure</option>
-<option>Networking</option>
-<option>Security</option>
-<option>VDI & VMware</option>
-<option>Power BI</option>
-<option>Tableau</option>
-<option>Python Automation</option>
-</select>
-
-<textarea name="message" placeholder="Describe your requirement..." required></textarea>
-
-<button class="btn" type="submit">Submit Enquiry</button>
-
+<input name="name" placeholder="Name" required>
+<input name="email" placeholder="Email" required>
+<input name="phone" placeholder="Phone" required>
+<textarea name="message" placeholder="Message"></textarea>
+<button class="btn">Submit</button>
 </form>
 
-<p><strong>Email:</strong> alakesh.gym@gmail.com</p>
-<p><strong>Phone:</strong> +91 9910933716</p>
+<p>Email: alakesh.gym@gmail.com</p>
+<p>Phone: +91 9910933716</p>
 </section>
 
-<a class="whatsapp" href="https://wa.me/919910933716" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/919910933716">💬</a>
+
+<!-- MOBILE NAV -->
+
+<div class="app-nav">
+<button onclick="showSection('home')">🏠</button>
+<button onclick="showSection('services')">⚙️</button>
+<button onclick="showSection('cases')">📊</button>
+<button onclick="showSection('contact')">📞</button>
+</div>
 
 <script>
 function showSection(id){
@@ -311,32 +271,17 @@ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 }
 
-const text="Microsoft 365 | Azure | Networking | Security | Power BI | Tableau | Python Consultant";
+/* typing */
+const text="Microsoft 365 | Azure | Security";
 let i=0;
 function type(){
 if(i<text.length){
-document.getElementById("typing").innerHTML+=text.charAt(i);
+document.getElementById("typing").innerHTML+=text[i];
 i++;
-setTimeout(type,40);
+setTimeout(type,50);
 }
 }
 type();
-
-const testimonials=[
-{text:"Alakesh handled our Microsoft 365 migration flawlessly.",author:"— IT Manager"},
-{text:"Azure setup with strong security and optimization.",author:"— Cloud Lead"},
-{text:"Excellent networking and firewall expertise.",author:"— Network Admin"},
-{text:"Defender & SIEM improved our security posture.",author:"— Security Analyst"}
-];
-
-let index=0;
-function showTestimonial(){
-document.getElementById("testimonial-text").innerText=testimonials[index].text;
-document.getElementById("testimonial-author").innerText=testimonials[index].author;
-index=(index+1)%testimonials.length;
-}
-setInterval(showTestimonial,3000);
-showTestimonial();
 </script>
 
 <script type="module">
@@ -352,32 +297,25 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-window.submitForm = async function(e) {
-  e.preventDefault();
+window.submitForm = async function(e){
+e.preventDefault();
 
-  const name = document.querySelector('[name="name"]').value;
-  const email = document.querySelector('[name="email"]').value;
-  const phone = document.querySelector('[name="phone"]').value;
-  const service = document.querySelector('[name="service"]').value;
-  const message = document.querySelector('[name="message"]').value;
+await addDoc(collection(db,"enquiries"),{
+name:e.target.name.value,
+email:e.target.email.value,
+phone:e.target.phone.value,
+message:e.target.message.value,
+createdAt:new Date()
+});
 
-  await addDoc(collection(db, "enquiries"), {
-    name,
-    email,
-    phone,
-    service,
-    message,
-    createdAt: new Date()
-  });
-
-  alert("✅ Enquiry submitted!");
-  e.target.reset();
+alert("Submitted");
+e.target.reset();
 };
 </script>
 
 <script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('sw.js');
 }
 </script>
 
